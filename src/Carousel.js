@@ -33,22 +33,24 @@ function Carousel({ photos, title }) {
     <div className="Carousel">
       <h1>{title}</h1>
       <div className="Carousel-main">
-        {currCardIdx !== 0 &&
+        {currCardIdx === 0 ?
           <i
-            className="bi bi-arrow-left-circle"
-            onClick={goBackward}
-          />}
+            className="bi bi-arrow-left-circle hidden"
+          /> : <i className="bi bi-arrow-left-circle"
+          onClick={goBackward} />
+        }
         <Card
           caption={currCard.caption}
           src={currCard.src}
           currNum={currCardIdx + 1}
           totalNum={total}
         />
-        {currCardIdx !== (total - 1) &&
+        {currCardIdx === total - 1 ?
           <i
-            className="bi bi-arrow-right-circle"
-            onClick={goForward}
-          />}
+            className="bi bi-arrow-right-circle hidden"
+          /> : <i className="bi bi-arrow-right-circle"
+          onClick={goForward} />
+        }
       </div>
     </div>
   );

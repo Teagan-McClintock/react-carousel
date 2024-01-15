@@ -96,10 +96,10 @@ it("hides left arrow on the first image", function() {
 
   expect(
     container.querySelector('.bi-arrow-left-circle')
-  ).not.toBeInTheDocument();
+  ).toHaveClass("hidden");
   expect(
     container.querySelector('.bi-arrow-right-circle')
-  ).toBeInTheDocument();
+  ).not.toHaveClass("hidden");
 });
 
 it("hides right arrow on the last image", function() {
@@ -115,9 +115,9 @@ it("hides right arrow on the last image", function() {
 
   expect(
     container.querySelector('.bi-arrow-right-circle')
-  ).not.toBeInTheDocument();
+  ).toHaveClass("hidden");
   expect(
     container.querySelector('.bi-arrow-left-circle')
-  ).toBeInTheDocument();
+  ).not.toHaveClass("hidden");
 });
 
